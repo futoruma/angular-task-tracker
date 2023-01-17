@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/interfaces/Task';
 
 @Component({
@@ -13,10 +13,15 @@ export class TaskComponent implements OnInit {
     reminder: false,
     id: 0
   }
+  @Output() toggleReminderClickEvent: EventEmitter<Event> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onDoubleClick() {
+    this.toggleReminderClickEvent.emit();
   }
 
 }

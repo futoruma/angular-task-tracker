@@ -29,5 +29,7 @@ export class MainpageComponent implements OnInit {
     this.toOpenNewTaskForm = !this.toOpenNewTaskForm;
   }
 
-
+  toggleReminder(task: Task) {
+    this.crudService.updateTask(task).subscribe();
+  }
 }

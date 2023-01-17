@@ -20,4 +20,10 @@ export class CrudService {
   getTasks(): Observable<Array<Task>> {
     return this.http.get<Array<Task>>(this.url, { headers: httpHeaders });
   }
+
+  updateTask(task: Task): Observable<Task> {
+    const newUrl = `${this.url}${task.id}`;
+    task.reminder = !task.reminder;
+    return this.http.put<Task>(newUrl, task, { headers: httpHeaders });
+  }
 }
