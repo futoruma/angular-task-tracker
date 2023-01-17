@@ -17,10 +17,17 @@ export class MainpageComponent implements OnInit {
       id: 0,
     },
   ];
+  toOpenNewTaskForm: boolean = false;
 
   constructor(private crudService: CrudService) {}
 
   ngOnInit(): void {
     this.crudService.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
+
+  openHideNewTaskForm() {
+    this.toOpenNewTaskForm = !this.toOpenNewTaskForm;
+  }
+
+
 }

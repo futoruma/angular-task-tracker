@@ -1,3 +1,9 @@
-<div class="mt-2 mb-4">
-  <button mat-raised-button color="primary">Close</button>
+<div class="mt-1 mb-4">
+  <button
+    mat-raised-button
+    color="{{ toCreate ? 'primary' : 'accent' }}"
+    (click)="onClick()"
+  >
+    {{ toCreate ? "Create a new task" : "Hide this form" }}
+  </button>
 </div>
