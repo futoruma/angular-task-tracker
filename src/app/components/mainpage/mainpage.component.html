@@ -1,11 +1,14 @@
-<div class="flex flex-col items-center w-80 bg-gray-800 mt-5 p-2 rounded">
+<div class="flex flex-col items-center">
   <app-header [title]="title"></app-header>
 
   <app-addclosebutton
     (addCloseClickEvent)="openHideNewTaskForm()"
   ></app-addclosebutton>
 
-  <app-newtaskform *ngIf="toOpenNewTaskForm" (newTaskFormSubmitEvent)="addTask($event)"></app-newtaskform>
+  <app-newtaskform
+    *ngIf="toOpenNewTaskForm"
+    (newTaskFormSubmitEvent)="addTask($event)"
+  ></app-newtaskform>
 
   <app-task
     *ngFor="let task of tasks"
