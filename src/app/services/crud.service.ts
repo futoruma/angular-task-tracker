@@ -26,4 +26,9 @@ export class CrudService {
     task.reminder = !task.reminder;
     return this.http.put<Task>(newUrl, task, { headers: httpHeaders });
   }
+
+  deleteTask(task: Task): Observable<Task> {
+    const newUrl = `${this.url}${task.id}`;
+    return this.http.delete<Task>(newUrl, { headers: httpHeaders });
+  }
 }

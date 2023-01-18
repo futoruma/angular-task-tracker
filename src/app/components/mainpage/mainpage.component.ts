@@ -9,14 +9,7 @@ import { Task } from 'src/app/interfaces/Task';
 })
 export class MainpageComponent implements OnInit {
   title: string = 'Task Tracker';
-  tasks: Array<Task> = [
-    {
-      date: '',
-      todo: '',
-      reminder: false,
-      id: 0,
-    },
-  ];
+  tasks!: Array<Task>;
   toOpenNewTaskForm: boolean = false;
 
   constructor(private crudService: CrudService) {}
@@ -25,11 +18,19 @@ export class MainpageComponent implements OnInit {
     this.crudService.getTasks().subscribe((tasks) => (this.tasks = tasks));
   }
 
-  openHideNewTaskForm() {
-    this.toOpenNewTaskForm = !this.toOpenNewTaskForm;
-  }
-
   toggleReminder(task: Task) {
     this.crudService.updateTask(task).subscribe();
+  }
+
+  deleteTask(task: Task) {
+    this.crudService
+      .deleteTask(task)
+      .subscribe(
+        () => (this.tasks = this.tasks.filter((_task) => _task.id != task.id))
+      );
+  }
+
+  openHideNewTaskForm() {
+    this.toOpenNewTaskForm = !this.toOpenNewTaskForm;
   }
 }

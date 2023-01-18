@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center w-80 bg-gray-700 mt-5 p-2 rounded">
+<div class="flex flex-col items-center w-80 bg-gray-800 mt-5 p-2 rounded">
   <app-header [title]="title"></app-header>
 
   <app-addclosebutton
@@ -11,6 +11,7 @@
     *ngFor="let task of tasks"
     [task]="task"
     (toggleReminderClickEvent)="toggleReminder(task)"
+    (deleteTaskClickEvent)="deleteTask(task)"
   ></app-task>
 
   <app-footer></app-footer>

@@ -1,9 +1,12 @@
 <div
+  *ngIf="task != undefined"
   class="w-72 bg-gray-200 p-3 my-2 border-red-500"
   [ngClass]="{ 'border-l-8': task.reminder }"
   (dblclick)="onDoubleClick()"
 >
-  <mat-icon class="float-right cursor-pointer">close</mat-icon>
+  <mat-icon class="float-right cursor-pointer" (click)="onDeleteClick()"
+    >close</mat-icon
+  >
   <div class="select-none font-semibold text-base">{{ task.date }}</div>
   <div class="select-none text-base">{{ task.todo }}</div>
 </div>

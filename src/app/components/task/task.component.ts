@@ -4,24 +4,22 @@ import { Task } from 'src/app/interfaces/Task';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class TaskComponent implements OnInit {
-  @Input() task: Task = {
-    date: "",
-    todo: "",
-    reminder: false,
-    id: 0
-  }
+  @Input() task: Task | undefined;
   @Output() toggleReminderClickEvent: EventEmitter<Event> = new EventEmitter();
+  @Output() deleteTaskClickEvent: EventEmitter<Event> = new EventEmitter();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onDoubleClick() {
     this.toggleReminderClickEvent.emit();
   }
 
+  onDeleteClick() {
+    this.deleteTaskClickEvent.emit();
+  }
 }
