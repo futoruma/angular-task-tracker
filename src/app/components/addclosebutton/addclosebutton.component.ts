@@ -3,20 +3,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-addclosebutton',
   templateUrl: './addclosebutton.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class AddclosebuttonComponent implements OnInit {
   @Output() addCloseClickEvent: EventEmitter<Event> = new EventEmitter();
   toCreate: boolean = true;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onClick() {
     this.addCloseClickEvent.emit();
     this.toCreate = !this.toCreate;
   }
-
 }

@@ -4,24 +4,22 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-newtaskform',
   templateUrl: './newtaskform.component.html',
-  styleUrls: []
+  styleUrls: [],
 })
 export class NewtaskformComponent implements OnInit {
   @Output() newTaskFormSubmitEvent: EventEmitter<Object> = new EventEmitter();
   newTaskForm = new FormGroup({
     date: new FormControl(''),
     todo: new FormControl(''),
-    reminder: new FormControl(false)
+    reminder: new FormControl(false),
   });
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     this.newTaskFormSubmitEvent.emit(this.newTaskForm.value);
     this.newTaskForm.reset();
   }
-
 }
