@@ -1,28 +1,22 @@
 {
   "tasks": [
     {
-      "date": "April 1, 2023",
-      "todo": "test",
-      "reminder": true,
+      "date": "April 1, 11 AM",
+      "todo": "Shopping",
+      "reminder": false,
       "id": 1
     },
     {
-      "date": "April 1, 2023",
-      "todo": "test",
+      "date": "April 8, 9 AM",
+      "todo": "Exams",
       "reminder": true,
       "id": 2
     },
     {
-      "date": "April 1, 2023",
-      "todo": "test",
-      "reminder": true,
+      "date": "April 26, 7 PM",
+      "todo": "Workout",
+      "reminder": false,
       "id": 3
-    },
-    {
-      "date": "April 1, 2023",
-      "todo": "test",
-      "reminder": true,
-      "id": 4
     }
   ]
 }

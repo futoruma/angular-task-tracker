@@ -1,1 +1,26 @@
-<div class="text-gray-50">new task form</div>
+<form
+  [formGroup]="newTaskForm"
+  (ngSubmit)="onSubmit()"
+  class="flex flex-col items-center mb-3"
+>
+  <mat-form-field class="text-gray-50">
+    <mat-label for="date" class="text-gray-50">Date and time: </mat-label>
+    <input matInput id="date" type="text" formControlName="date" />
+  </mat-form-field>
+
+  <mat-form-field class="text-gray-50">
+    <mat-label for="todo" class="text-gray-50">To do: </mat-label>
+    <input matInput id="todo" type="text" formControlName="todo" />
+  </mat-form-field>
+
+  <mat-checkbox
+    id="reminder"
+    type="checkbox"
+    formControlName="reminder"
+    color="warn"
+    class="text-gray-50 mb-3"
+    >Reminder</mat-checkbox
+  >
+
+  <button mat-raised-button color="primary" type="submit">Add task</button>
+</form>

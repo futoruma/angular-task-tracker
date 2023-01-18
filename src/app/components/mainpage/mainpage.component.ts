@@ -30,6 +30,12 @@ export class MainpageComponent implements OnInit {
       );
   }
 
+  addTask(newTaskFormValue: any) {
+    this.crudService
+      .addTask(newTaskFormValue)
+      .subscribe((task) => this.tasks.push(task));
+  }
+
   openHideNewTaskForm() {
     this.toOpenNewTaskForm = !this.toOpenNewTaskForm;
   }

@@ -5,7 +5,7 @@
     (addCloseClickEvent)="openHideNewTaskForm()"
   ></app-addclosebutton>
 
-  <app-newtaskform *ngIf="toOpenNewTaskForm"></app-newtaskform>
+  <app-newtaskform *ngIf="toOpenNewTaskForm" (newTaskFormSubmitEvent)="addTask($event)"></app-newtaskform>
 
   <app-task
     *ngFor="let task of tasks"
